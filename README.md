@@ -7,7 +7,7 @@ Author: Qijie Zhao. Date: 19/01/2019
 
 * [Introduction](#Introduction)
 
-* [Scheduel](#Scheduel)
+* [Schedule](#Schedule)
 
 * [Data Preparation and Installation](#Preparation)
 
@@ -73,7 +73,7 @@ We get the multi-level multi-scale feature, and try to re-allocate a weight for 
 
 <div align=left>
 
-## Scheduel
+## Schedule
 
 <ul>
 <li><input type="checkbox" disabled checked> 13 Nov, 2018 - Release the paper</li>
@@ -89,8 +89,8 @@ We get the multi-level multi-scale feature, and try to re-allocate a weight for 
 - Install deeplearning framework, i.e., pytorch, torchvision and other libs.
 
 ```Shell
-conda install pytorch torchvision -c pytorch
-pip install opencv-python,tqdm
+conda install pytorch==0.4.1 torchvision -c pytorch
+pip install opencv-python tqdm
 ```
 - Clone this repository.
 ```Shell
@@ -102,7 +102,7 @@ git clone https://github.com/qijiezhao/M2Det.git
 sh make.sh
 ```
 
-- Prepare dataset (e.g., VOC, COCO), refer to [sss.pytorch](https://github.com/amdegroot/ssd.pytorch) for detailed instructions.
+- Prepare dataset (e.g., VOC, COCO), refer to [ssd.pytorch](https://github.com/amdegroot/ssd.pytorch) for detailed instructions.
 
 
 ## Demo
@@ -125,6 +125,8 @@ You can also run real-time demo using your webcam by specifying the camera's dev
 ```Shell
   python demo.py -c=configs/m2det512_vgg.py -m=weights/m2det512_vgg.pth --show --cam=0
 ```
+
+**In addition, I really suggest you to change the nms type from soft-nms to hard-nms for faster visualization. Soft-NMS is good for mAP accuracy, but it's useless for Demo/Vis.**
 
 Thanks for the volunteer demonstration of m2det: [entry1](https://www.youtube.com/watch?v=VF8JuQwKQmU), [entry2](https://www.youtube.com/watch?v=1hugYRnLTHM), [entry3](https://www.youtube.com/watch?v=sYkqcTImK9w).
 ## Evaluation
